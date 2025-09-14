@@ -87,7 +87,7 @@ export const HeroCarousel = () => {
                     size="lg"
                     onClick={() => {
                       const message = `Hi! I would like to order ${slide.title} gujias from Ghar Ka Swaad. Please share the details.`;
-                      const whatsappUrl = `https://wa.me/919876543210?text=${encodeURIComponent(message)}`;
+                      const whatsappUrl = `https://wa.me/918927837316?text=${encodeURIComponent(message)}`;
                       window.open(whatsappUrl, '_blank');
                     }}
                   >
@@ -98,7 +98,7 @@ export const HeroCarousel = () => {
                     size="lg"
                     onClick={() => {
                       const message = "Hi! I would like to know more about Ghar Ka Swaad and your gujias. Please share your story and menu.";
-                      const whatsappUrl = `https://wa.me/919876543210?text=${encodeURIComponent(message)}`;
+                      const whatsappUrl = `https://wa.me/918927837316?text=${encodeURIComponent(message)}`;
                       window.open(whatsappUrl, '_blank');
                     }}
                   >

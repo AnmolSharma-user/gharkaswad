@@ -46,7 +46,7 @@ export const Navigation = () => {
               size="sm"
               onClick={() => {
                 const message = "Hi! I would like to order fresh gujias from Ghar Ka Swaad. Please share the menu and availability.";
-                const whatsappUrl = `https://wa.me/919876543210?text=${encodeURIComponent(message)}`;
+                const whatsappUrl = `https://wa.me/918927837316?text=${encodeURIComponent(message)}`;
                 window.open(whatsappUrl, '_blank');
               }}
             >
@@ -88,7 +88,7 @@ export const Navigation = () => {
                   size="sm"
                   onClick={() => {
                     const message = "Hi! I would like to order fresh gujias from Ghar Ka Swaad. Please share the menu and availability.";
-                    const whatsappUrl = `https://wa.me/919876543210?text=${encodeURIComponent(message)}`;
+                    const whatsappUrl = `https://wa.me/918927837316?text=${encodeURIComponent(message)}`;
                     window.open(whatsappUrl, '_blank');
                   }}
                 >

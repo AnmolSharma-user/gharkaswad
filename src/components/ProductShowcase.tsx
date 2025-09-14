@@ -39,13 +39,13 @@ const products = [
 
 const handleBookNow = (productName: string) => {
   const message = `Hi! I would like to book ${productName} from Ghar Ka Swaad. Please let me know the availability and delivery details.`;
-  const whatsappUrl = `https://wa.me/919876543210?text=${encodeURIComponent(message)}`;
+  const whatsappUrl = `https://wa.me/918927837316?text=${encodeURIComponent(message)}`;
   window.open(whatsappUrl, '_blank');
 };
 
 const handleViewAllProducts = () => {
   const message = `Hi! I would like to see your complete menu of gujiya varieties from Ghar Ka Swaad. Please share all available products and their details.`;
-  const whatsappUrl = `https://wa.me/919876543210?text=${encodeURIComponent(message)}`;
+  const whatsappUrl = `https://wa.me/918927837316?text=${encodeURIComponent(message)}`;
   window.open(whatsappUrl, '_blank');
 };
 

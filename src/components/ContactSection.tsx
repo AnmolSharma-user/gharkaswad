@@ -32,18 +32,11 @@ export const ContactSection = () => {
                 </h3>
                 <div className="space-y-2">
                   <a
-                    href="tel:+919885619065"
+                    href="tel:+918927837316"
                     className="flex items-center space-x-3 text-muted-foreground hover:text-primary transition-colors group"
                   >
                     <Phone className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                    <span>+91 9885619065</span>
-                  </a>
-                  <a
-                    href="tel:+919747329729"
-                    className="flex items-center space-x-3 text-muted-foreground hover:text-primary transition-colors group"
-                  >
-                    <Phone className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                    <span>+91 9747329729</span>
+                    <span>+91 89278 37316</span>
                   </a>
                 </div>
               </div>
@@ -54,18 +47,18 @@ export const ContactSection = () => {
                   Email Address
                 </h3>
                 <a
-                  href="mailto:crunchboxinfo@gmail.com"
+                  href="mailto:gharkaswaadinfo@gmail.com"
                   className="flex items-center space-x-3 text-muted-foreground hover:text-primary transition-colors group"
                 >
                   <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                  <span>crunchboxinfo@gmail.com</span>
+                  <span>gharkaswaadinfo@gmail.com</span>
                 </a>
               </div>
 
               {/* WhatsApp */}
               <div>
                 <a
-                  href="https://wa.me/919885619065"
+                  href="https://wa.me/918927837316"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center space-x-3 bg-green-500 text-white px-6 py-3 rounded-full hover:bg-green-600 transition-colors group"
@@ -83,7 +76,7 @@ export const ContactSection = () => {
               </h3>
               <div className="flex space-x-4">
                 <a
-                  href="https://instagram.com/gharkaswaad_2025"
+                  href="https://www.instagram.com/gharkaswaad_02"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 rounded-full bg-gradient-primary text-primary-foreground hover:shadow-glow hover:scale-110 transition-all duration-300"
@@ -121,7 +114,7 @@ export const ContactSection = () => {
                   className="w-full"
                   onClick={() => {
                     const message = "Hi! I would like to place an order from Ghar Ka Swaad. Please share the menu and pricing.";
-                    const whatsappUrl = `https://wa.me/919876543210?text=${encodeURIComponent(message)}`;
+                    const whatsappUrl = `https://wa.me/918927837316?text=${encodeURIComponent(message)}`;
                     window.open(whatsappUrl, '_blank');
                   }}
                 >
@@ -133,7 +126,7 @@ export const ContactSection = () => {
                   className="w-full"
                   onClick={() => {
                     const message = "Hi! Can you please share your complete menu with prices for Ghar Ka Swaad gujias?";
-                    const whatsappUrl = `https://wa.me/919876543210?text=${encodeURIComponent(message)}`;
+                    const whatsappUrl = `https://wa.me/918927837316?text=${encodeURIComponent(message)}`;
                     window.open(whatsappUrl, '_blank');
                   }}
                 >
