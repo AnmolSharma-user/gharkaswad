@@ -2,13 +2,27 @@ import { Star, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 
+// Auto-import images from assets
+import multigrains1 from '@/assets/multigrains-1.jpg';
+import multigrains2 from '@/assets/multigrains-2.jpg';
+import multigrains3 from '@/assets/multigrains-3.jpg';
+import coconutGujiya1 from '@/assets/coconut-gujiya-1.jpg';
+import coconutGujiya2 from '@/assets/coconut-gujiya-2.jpg';
+import coconutGujiya3 from '@/assets/coconut-gujiya-3.jpg';
+import chocolateGujiya1 from '@/assets/chocolate-gujiya-1.jpg';
+import chocolateGujiya2 from '@/assets/chocolate-gujiya-2.jpg';
+import chocolateGujiya3 from '@/assets/chocolate-gujiya-3.jpg';
+import dryFruitsGujiya1 from '@/assets/dry-fruits-gujiya-1.jpg';
+import dryFruitsGujiya2 from '@/assets/dry-fruits-gujiya-2.jpg';
+import dryFruitsGujiya3 from '@/assets/dry-fruits-gujiya-3.jpg';
+
 const products = [
   {
     id: 1,
     name: 'Multi Grains Gujiya',
     description: 'Wholesome blend of multiple grains with jaggery and nuts for a healthy indulgence',
     rating: 4.9,
-    images: ['/placeholder-multigrain-1.jpg', '/placeholder-multigrain-2.jpg', '/placeholder-multigrain-3.jpg'],
+    images: [multigrains1, multigrains2, multigrains3],
     category: 'Healthy'
   },
   {
@@ -16,7 +30,7 @@ const products = [
     name: 'Coconut Gujiya',
     description: 'Fresh coconut filling with cardamom and rose petals for a tropical delight',
     rating: 4.8,
-    images: ['/placeholder-coconut-1.jpg', '/placeholder-coconut-2.jpg', '/placeholder-coconut-3.jpg'],
+    images: [coconutGujiya1, coconutGujiya2, coconutGujiya3],
     category: 'Traditional'
   },
   {
@@ -24,7 +38,7 @@ const products = [
     name: 'Chocolate Gujiya',
     description: 'Rich dark chocolate filling with roasted nuts for modern taste buds',
     rating: 4.9,
-    images: ['/placeholder-chocolate-1.jpg', '/placeholder-chocolate-2.jpg', '/placeholder-chocolate-3.jpg'],
+    images: [chocolateGujiya1, chocolateGujiya2, chocolateGujiya3],
     category: 'Modern'
   },
   {
@@ -32,7 +46,7 @@ const products = [
     name: 'Dry Fruits Gujiya',
     description: 'Premium cashews, almonds, pistachios, and raisins with pure ghee',
     rating: 5.0,
-    images: ['/placeholder-dryfruits-1.jpg', '/placeholder-dryfruits-2.jpg', '/placeholder-dryfruits-3.jpg'],
+    images: [dryFruitsGujiya1, dryFruitsGujiya2, dryFruitsGujiya3],
     category: 'Premium'
   }
 ];
@@ -81,12 +95,12 @@ export const ProductShowcase = () => {
                   <CarouselContent>
                     {product.images.map((image, index) => (
                       <CarouselItem key={index}>
-                        <div className="aspect-square bg-gradient-secondary rounded-xl flex items-center justify-center relative overflow-hidden">
-                          <div className="text-6xl opacity-20">
-                            {product.name.includes('Multi Grains') ? '🌾' : 
-                             product.name.includes('Coconut') ? '🥥' :
-                             product.name.includes('Chocolate') ? '🍫' : '🌰'}
-                          </div>
+                        <div className="aspect-square bg-gradient-secondary rounded-xl relative overflow-hidden">
+                          <img 
+                            src={image} 
+                            alt={`${product.name} - Image ${index + 1}`}
+                            className="w-full h-full object-cover"
+                          />
                           <div className="absolute bottom-2 right-2 bg-background/80 backdrop-blur-sm px-2 py-1 rounded-full text-xs text-muted-foreground">
                             {index + 1}/{product.images.length}
                           </div>
