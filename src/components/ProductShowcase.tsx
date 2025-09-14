@@ -1,30 +1,39 @@
 import { Star, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 
 const products = [
   {
     id: 1,
-    name: 'Traditional Mawa Gujia',
-    description: 'Handcrafted with fresh mawa, premium almonds, and pure cow ghee',
+    name: 'Multi Grains Gujiya',
+    description: 'Wholesome blend of multiple grains with jaggery and nuts for a healthy indulgence',
     rating: 4.9,
-    image: '/placeholder-gujia-1.jpg',
-    category: 'Classic'
+    images: ['/placeholder-multigrain-1.jpg', '/placeholder-multigrain-2.jpg', '/placeholder-multigrain-3.jpg'],
+    category: 'Healthy'
   },
   {
     id: 2,
-    name: 'Dry Fruit Delight Gujia',
-    description: 'Filled with cashews, pistachios, raisins, and aromatic cardamom',
+    name: 'Coconut Gujiya',
+    description: 'Fresh coconut filling with cardamom and rose petals for a tropical delight',
     rating: 4.8,
-    image: '/placeholder-gujia-2.jpg',
-    category: 'Premium'
+    images: ['/placeholder-coconut-1.jpg', '/placeholder-coconut-2.jpg', '/placeholder-coconut-3.jpg'],
+    category: 'Traditional'
   },
   {
     id: 3,
-    name: 'Coconut Special Gujia',
-    description: 'Fresh coconut filling with jaggery and a hint of saffron',
+    name: 'Chocolate Gujiya',
+    description: 'Rich dark chocolate filling with roasted nuts for modern taste buds',
     rating: 4.9,
-    image: '/placeholder-gujia-3.jpg',
-    category: 'Special'
+    images: ['/placeholder-chocolate-1.jpg', '/placeholder-chocolate-2.jpg', '/placeholder-chocolate-3.jpg'],
+    category: 'Modern'
+  },
+  {
+    id: 4,
+    name: 'Dry Fruits Gujiya',
+    description: 'Premium cashews, almonds, pistachios, and raisins with pure ghee',
+    rating: 5.0,
+    images: ['/placeholder-dryfruits-1.jpg', '/placeholder-dryfruits-2.jpg', '/placeholder-dryfruits-3.jpg'],
+    category: 'Premium'
   }
 ];
 
@@ -54,16 +63,35 @@ export const ProductShowcase = () => {
         </div>
 
         {/* Product Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {products.map((product) => (
             <div
               key={product.id}
               className="group bg-background rounded-2xl p-6 shadow-card hover:shadow-glow transition-all duration-500 hover:-translate-y-2"
             >
-              {/* Product Image Placeholder */}
-              <div className="aspect-square bg-gradient-secondary rounded-xl mb-4 flex items-center justify-center relative overflow-hidden">
-                <div className="text-6xl opacity-20">🥟</div>
-                <button className="absolute top-4 right-4 p-2 rounded-full bg-background/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110">
+              {/* Product Image Carousel */}
+              <div className="aspect-square rounded-xl mb-4 relative overflow-hidden">
+                <Carousel className="w-full h-full">
+                  <CarouselContent>
+                    {product.images.map((image, index) => (
+                      <CarouselItem key={index}>
+                        <div className="aspect-square bg-gradient-secondary rounded-xl flex items-center justify-center relative overflow-hidden">
+                          <div className="text-6xl opacity-20">
+                            {product.name.includes('Multi Grains') ? '🌾' : 
+                             product.name.includes('Coconut') ? '🥥' :
+                             product.name.includes('Chocolate') ? '🍫' : '🌰'}
+                          </div>
+                          <div className="absolute bottom-2 right-2 bg-background/80 backdrop-blur-sm px-2 py-1 rounded-full text-xs text-muted-foreground">
+                            {index + 1}/{product.images.length}
+                          </div>
+                        </div>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <CarouselPrevious className="absolute left-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <CarouselNext className="absolute right-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </Carousel>
+                <button className="absolute top-4 right-4 p-2 rounded-full bg-background/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110 z-10">
                   <Heart className="w-4 h-4 text-primary" />
                 </button>
               </div>
