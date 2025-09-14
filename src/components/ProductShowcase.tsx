@@ -43,6 +43,12 @@ const handleBookNow = (productName: string) => {
   window.open(whatsappUrl, '_blank');
 };
 
+const handleViewAllProducts = () => {
+  const message = `Hi! I would like to see your complete menu of gujiya varieties from Ghar Ka Swaad. Please share all available products and their details.`;
+  const whatsappUrl = `https://wa.me/919876543210?text=${encodeURIComponent(message)}`;
+  window.open(whatsappUrl, '_blank');
+};
+
 export const ProductShowcase = () => {
   return (
     <section id="products" className="py-20 bg-card">
@@ -67,7 +73,7 @@ export const ProductShowcase = () => {
           {products.map((product) => (
             <div
               key={product.id}
-              className="group bg-background rounded-2xl p-6 shadow-card hover:shadow-glow transition-all duration-500 hover:-translate-y-2"
+              className="group bg-background rounded-2xl p-6 shadow-card hover:shadow-glow transition-all duration-500 hover:-translate-y-2 flex flex-col h-full"
             >
               {/* Product Image Carousel */}
               <div className="aspect-square rounded-xl mb-4 relative overflow-hidden">
@@ -97,7 +103,7 @@ export const ProductShowcase = () => {
               </div>
 
               {/* Product Info */}
-              <div className="space-y-3">
+              <div className="space-y-3 flex-1 flex flex-col">
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-primary font-semibold tracking-wide uppercase">
                     {product.category}
@@ -116,7 +122,7 @@ export const ProductShowcase = () => {
                   {product.description}
                 </p>
                 
-                <div className="pt-4">
+                <div className="pt-4 mt-auto">
                   <Button 
                     variant="hero" 
                     size="sm" 
@@ -133,7 +139,7 @@ export const ProductShowcase = () => {
 
         {/* View All Button */}
         <div className="text-center">
-          <Button variant="outline-hero" size="lg">
+          <Button variant="outline-hero" size="lg" onClick={handleViewAllProducts}>
             View All Products
           </Button>
         </div>
