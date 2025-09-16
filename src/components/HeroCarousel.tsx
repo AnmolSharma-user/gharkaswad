@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import heroSnacks1 from '@/assets/hero-snacks-1.jpg';
-import heroSnacks2 from '@/assets/hero-snacks-2.jpg';
-import heroSnacks3 from '@/assets/hero-snacks-3.jpg';
+import heroSnacks1 from '@/assets/hero-snacks-1.png';
+import heroSnacks2 from '@/assets/hero-image.webp';
+import heroSnacks3 from '@/assets/hero-image-1.jpg';
 
 const slides = [
   {
