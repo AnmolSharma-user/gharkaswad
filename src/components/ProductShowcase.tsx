@@ -23,7 +23,11 @@ const products = [
     description: 'Wholesome blend of multiple grains with jaggery and nuts for a healthy indulgence',
     rating: 4.9,
     images: [multigrains1, multigrains2, multigrains3],
-    category: 'Healthy'
+    category: 'Healthy',
+    weight: '250g',
+    originalPrice: 450,
+    currentPrice: 315,
+    discount: 30
   },
   {
     id: 2,
@@ -31,7 +35,11 @@ const products = [
     description: 'Fresh coconut filling with cardamom and rose petals for a tropical delight',
     rating: 4.8,
     images: [coconutGujiya1, coconutGujiya2, coconutGujiya3],
-    category: 'Traditional'
+    category: 'Traditional',
+    weight: '250g',
+    originalPrice: 340,
+    currentPrice: 255,
+    discount: 25
   },
   {
     id: 3,
@@ -39,7 +47,11 @@ const products = [
     description: 'Rich dark chocolate filling with roasted nuts for modern taste buds',
     rating: 4.9,
     images: [chocolateGujiya1, chocolateGujiya2, chocolateGujiya3],
-    category: 'Modern'
+    category: 'Modern',
+    weight: '250g',
+    originalPrice: 390,
+    currentPrice: 275,
+    discount: 29
   },
   {
     id: 4,
@@ -47,7 +59,11 @@ const products = [
     description: 'Premium cashews, almonds, pistachios, and raisins with pure ghee',
     rating: 5.0,
     images: [dryFruitsGujiya1, dryFruitsGujiya2, dryFruitsGujiya3],
-    category: 'Premium'
+    category: 'Premium',
+    weight: '250g',
+    originalPrice: 435,
+    currentPrice: 310,
+    discount: 29
   }
 ];
 
@@ -135,6 +151,31 @@ export const ProductShowcase = () => {
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   {product.description}
                 </p>
+
+                {/* Pricing Section */}
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm font-medium text-muted-foreground">
+                      {product.weight}
+                    </span>
+                    <div className="flex items-center space-x-2">
+                      <span className="text-sm text-muted-foreground line-through">
+                        ₹{product.originalPrice}
+                      </span>
+                      <span className="text-xs bg-primary text-primary-foreground px-2 py-1 rounded-full font-semibold">
+                        {product.discount}% OFF
+                      </span>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-2xl font-bold text-foreground">
+                      ₹{product.currentPrice}
+                    </span>
+                    <span className="text-sm text-green-600 font-medium">
+                      Save ₹{product.originalPrice - product.currentPrice}
+                    </span>
+                  </div>
+                </div>
                 
                 <div className="pt-4 mt-auto">
                   <Button 
